@@ -1,4 +1,4 @@
-# Test technique - front-end
+# Front-end technical test
 
 Pure HTML/CSS + JS application. The entry point is [index.html](index.html).
 

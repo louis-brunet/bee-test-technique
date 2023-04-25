@@ -117,7 +117,6 @@ const tests = [
         async test() {
             const container = document.body.firstElementChild;
             const nbRectangles = 10;
-            // const rectangles =  [];
             let rect = null;
 
             assert(container.childElementCount === 0);
@@ -125,7 +124,6 @@ const tests = [
                 createRectangle(randCoord(), randCoord(), randCoord(), randCoord());
                 
                 rect = container.children[i];
-                // rectangles.push(rect);
                 
                 assert(container.childElementCount === i+1);
                 
