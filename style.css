@@ -42,3 +42,7 @@ body {
     justify-content: space-around;
     padding: 8px;
 }   
+
+.tests :first-child {
+    background-color: rgb(51, 174, 196);
+}

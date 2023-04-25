@@ -32,21 +32,29 @@ function randCoord () {
     return Math.floor(Math.random() * 500);
 }
 
-/** Launch all tests sequentially  */
-async function startTests () {
+function startTests () {
     const testsDiv = document.getElementsByClassName('tests')[0];
+    const launchAllBtn = document.createElement('button');
+    launchAllBtn.textContent = 'Lancer tous les tests';
+    launchAllBtn.addEventListener('click', async () => {
+        runAll(tests);
+    });
+    testsDiv.appendChild(launchAllBtn);
+
     for (const test of tests) {
         const btn = document.createElement('button');
         btn.textContent = test.name;
-        btn.addEventListener('click', test.test);
+        btn.addEventListener('click', async () => {
+            await test.test();
+            alert('Test validé');
+        });
 
         testsDiv.appendChild(btn);
     }
+}
 
-    if (!confirm('Lancer les tests ?')) {
-        return;
-    } 
-
+/** Launch all tests sequentially  */
+async function runAll(tests) {
     for (const test of tests) {
         // run tests synchronously so they don't interfere with each other
         await test.test();        
@@ -60,7 +68,7 @@ async function startTests () {
 /** Define tests */
 const tests = [
     { 
-        name: 'Création de rectangles',
+        name: 'Création de rectangles (puis réinitialisation)',
         test() {
             const container = document.body.firstElementChild;
             assert(container.childElementCount === 0);
