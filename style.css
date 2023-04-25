@@ -4,9 +4,14 @@ html, body {
     padding: 0;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 .content {
-    height: 100%;
     width: 100%;
+    flex: 1;
 }
 
 .rectangle {
@@ -31,4 +36,9 @@ html, body {
     }
 }
 
-   
+.tests {
+    background-color: gray;
+    display: flex;
+    justify-content: space-around;
+    padding: 8px;
+}   

@@ -87,8 +87,11 @@ function checkMouseButtonDown (event) {
 function stopRotation() {
     spinningRectangleCount--;
     if (spinningRectangleCount === 0) {
-        const spinners = document.querySelectorAll('.rectangle.spin');
-        spinners.forEach(elem => elem.remove());
+        const spinners = document.getElementsByClassName('rectangle spin');
+
+        while (spinners.length && spinners[0]) {
+            spinners[0].remove();
+        }
     }
 }
 
