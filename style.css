@@ -1,0 +1,34 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    height: 100%;
+    width: 100%;
+}
+
+.rectangle {
+    position: absolute;
+}
+
+.spin {
+    animation-name: rotation;
+    /* animation-duration is inserted inline in JS to keep the values
+    coherent between CSS and JS */
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+@keyframes rotation {
+    0%{
+        transform: rotate(0deg);
+    }
+    
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+   
